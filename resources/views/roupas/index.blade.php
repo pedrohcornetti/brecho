@@ -37,12 +37,6 @@
                         <td>{{ $roupa->tamanho }}</td>
                         <td>
                             <a href="{{ route('roupas.show', $roupa->id) }}" class="btn btn-info btn-sm">Ver</a>
-                            <a href="{{ route('roupas.edit', $roupa->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                            <form action="{{ route('roupas.destroy', $roupa->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir esta roupa?')">Excluir</button>
-                            </form>
                         </td>
                     </tr>
                 @endforeach
