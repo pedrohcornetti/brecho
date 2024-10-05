@@ -50,6 +50,7 @@ class RoupasController extends Controller
      */
     public function show(string $id)
     {
+        $roupa = Roupas::find($id);
         return view('roupas.show', compact('roupa'));
     }
 
