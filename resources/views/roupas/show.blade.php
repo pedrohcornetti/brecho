@@ -5,7 +5,7 @@
 @section('content')
     <h5>Excluir Categoria</h5>
 
-    <form action="/roupas/" method="POST">
+    <form action="/roupas/{{$roupa->id}}" method="POST">
         @CSRF
         @method('DELETE')
         <div class="row">
