@@ -50,7 +50,7 @@ class RoupasController extends Controller
      */
     public function show(string $id)
     {
-        $roupa = Roupas::find($id);
+        $roupa = Roupas::findOrFail($id);
         return view('roupas.show', compact('roupa'));
     }
 
@@ -59,7 +59,8 @@ class RoupasController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $roupa = Roupas::findOrFail($id);
+        return view('roupas.edit', compact('roupa'));
     }
 
     /**
@@ -67,7 +68,9 @@ class RoupasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $roupa = Roupas::findOrFail($id);
+        $roupa->update($request->all());
+        return redirect("/roupa");
     }
 
     /**
@@ -75,6 +78,8 @@ class RoupasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $roupa = Roupas::findOrFail($id);
+        $roupa->delete();
+        return redirect("/roupa");
     }
 }
